@@ -1,0 +1,40 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;700&family=Sora:wght@400;600&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0}
+body{width:1440px;height:900px;overflow:hidden;background:#0E5A3A;color:#F2F2EA;font-family:Sora,sans-serif;display:grid;grid-template-columns:250px 1fr;
+background-image:radial-gradient(#0A3F29 1.2px,transparent 1.3px);background-size:22px 22px}
+aside{border-right:2px solid #F2F2EA33;padding:28px 22px}
+.logo{font-family:"Chakra Petch";font-weight:700;font-size:26px;letter-spacing:.04em}
+.logo i{color:#F5D04A;font-style:normal}
+nav{margin-top:40px;display:grid;gap:6px}
+nav a{display:flex;gap:12px;align-items:center;padding:12px;font-family:"Chakra Petch";font-size:15px;border:1px solid transparent}
+nav a .pad{width:12px;height:12px;border-radius:50%;background:#C8873A}
+nav a.on{border:1px solid #F2F2EA}
+main{padding:36px 48px}
+.k{font-family:"Chakra Petch";font-size:13px;letter-spacing:.2em;color:#F5D04A}
+h1{font-family:"Chakra Petch";font-weight:700;font-size:72px;line-height:1;margin-top:8px}
+.row{display:flex;justify-content:space-between;align-items:end}
+.btn{background:#F5D04A;color:#0A3F29;font-weight:600;padding:14px 22px;font-size:15px}
+.panel{margin-top:32px;background:#0A3F29;border:2px solid #F2F2EA}
+.ph{display:flex;justify-content:space-between;padding:16px 22px;border-bottom:1px solid #F2F2EA44;font-family:"Chakra Petch"}
+.search{border:1px solid #F2F2EA66;padding:10px 14px;width:320px;color:#F2F2EA99;font-size:13px}
+table{width:100%;border-collapse:collapse}
+td,th{padding:20px 22px;text-align:left;border-bottom:1px solid #F2F2EA22;font-size:15px}
+th{font-family:"Chakra Petch";font-size:12px;letter-spacing:.18em;color:#F2F2EAaa}
+.des{font-family:"Chakra Petch";font-weight:700;font-size:28px;color:#F5D04A}
+.chip{display:inline-block;width:46px;height:28px;background:#111;border-radius:3px;position:relative;margin-right:14px;vertical-align:middle}
+.chip:before,.chip:after{content:"";position:absolute;left:6px;right:6px;height:3px;background:repeating-linear-gradient(90deg,#C8873A 0 4px,transparent 4px 8px)}
+.chip:before{top:-3px}.chip:after{bottom:-3px}
+.id{font-family:"Chakra Petch";color:#F2F2EAaa}
+</style></head><body>
+<aside><div class="logo">PRODUCT<i>HUB</i></div>
+<nav><a><span class="pad"></span>Inicio</a><a class="on"><span class="pad"></span>Productos</a><a><span class="pad"></span>Nuevo producto</a></nav></aside>
+<main><div class="row"><div><div class="k">REV A · CATÁLOGO</div><h1>Productos</h1></div><span class="btn">+ Colocar producto</span></div>
+<div class="panel"><div class="ph"><span>4 componentes</span><span class="search">Buscar designador o nombre</span></div>
+<table><tr><th>DES.</th><th>PRODUCTO</th><th>RESOURCE ID</th></tr>
+<tr><td class="des">U1</td><td><span class="chip"></span>Wireless Headphones</td><td class="id">product-001</td></tr>
+<tr><td class="des">U2</td><td><span class="chip"></span>Smart Watch</td><td class="id">product-002</td></tr>
+<tr><td class="des">U3</td><td><span class="chip"></span>Mechanical Keyboard</td><td class="id">product-003</td></tr>
+<tr><td class="des">U4</td><td><span class="chip"></span>4K Monitor</td><td class="id">product-004</td></tr></table></div></main>
+</body></html>

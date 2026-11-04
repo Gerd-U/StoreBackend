@@ -1,0 +1,121 @@
+@import "tailwindcss";
+
+@theme {
+  --color-paper: #f8f7f3;
+  --color-paper-2: #efede6;
+  --color-card: #ffffff;
+  --color-line: #e2dfd5;
+  --color-ink: #141413;
+  --color-ink-2: #1e1e1c;
+  --color-ink-3: #2d2d2a;
+  --color-ink-soft: #5a5953;
+  --color-sign: #f6d93b;
+  --color-sign-soft: #fbf0b4;
+  --color-signal: #cf2a24;
+  --color-signal-deep: #a51f1a;
+  --color-wire: #2c5fd9;
+
+  --font-display: "Dela Gothic One", "Zen Kaku Gothic New", system-ui, sans-serif;
+  --font-sans: "Zen Kaku Gothic New", system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  --ease-out-strong: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-in-out-strong: cubic-bezier(0.77, 0, 0.175, 1);
+
+  --animate-shelf-in: shelf-in 320ms var(--ease-out-strong) both;
+
+  @keyframes shelf-in {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+  }
+}
+
+@layer base {
+  html {
+    background: var(--color-paper);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    scrollbar-color: var(--color-ink-soft) var(--color-paper-2);
+  }
+
+  ::selection {
+    background: var(--color-sign);
+    color: var(--color-ink);
+  }
+
+  input,
+  textarea {
+    caret-color: var(--color-signal);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-wire);
+    outline-offset: 3px;
+  }
+
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+}
+
+/* A POP card hangs from its hook: barely tilted at rest, straightened when picked up. */
+.pop-card {
+  transform: rotate(var(--tilt, 0deg));
+  transform-origin: 50% 1.4rem;
+  transition:
+    transform 320ms var(--ease-out-strong),
+    border-color 200ms ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .pop-card:hover {
+    transform: rotate(0deg) translateY(-4px);
+    border-color: var(--color-ink);
+  }
+}
+
+.pop-card:focus-within {
+  transform: rotate(0deg) translateY(-4px);
+  border-color: var(--color-ink);
+}
+
+.press {
+  transition:
+    transform 140ms var(--ease-out-strong),
+    background-color 180ms ease,
+    border-color 180ms ease,
+    color 180ms ease;
+}
+
+.press:active {
+  transform: scale(0.97);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pop-card,
+  .press {
+    transition: none;
+  }
+
+  .pop-card:hover,
+  .pop-card:focus-within {
+    transform: rotate(var(--tilt, 0deg));
+  }
+
+  .press:active {
+    transform: none;
+  }
+
+  .animate-shelf-in {
+    animation: none;
+  }
+}

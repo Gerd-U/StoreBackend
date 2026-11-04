@@ -1,0 +1,206 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-03T12:00:00Z",
+  "title": "Design System: ProductHub",
+  "extensions": {
+    "colorMeta": {
+      "sign-yellow": {
+        "role": "primary",
+        "displayName": "Amarillo letrero",
+        "canonical": "#f6d93b",
+        "tonalRamp": [
+          "#3b3205",
+          "#6b5b0b",
+          "#9a8411",
+          "#c9ad1a",
+          "#f6d93b",
+          "#f8e36f",
+          "#fbf0b4",
+          "#fdf8dc"
+        ]
+      },
+      "signal-red": {
+        "role": "secondary",
+        "displayName": "Rojo señal",
+        "canonical": "#cf2a24",
+        "tonalRamp": [
+          "#360a09",
+          "#5e1210",
+          "#a51f1a",
+          "#cf2a24",
+          "#de5550",
+          "#ea8a86",
+          "#f4c0bd",
+          "#fbe6e5"
+        ]
+      },
+      "wire-blue": {
+        "role": "tertiary",
+        "displayName": "Azul cable",
+        "canonical": "#2c5fd9",
+        "tonalRamp": [
+          "#0a1838",
+          "#132c66",
+          "#1d4299",
+          "#2c5fd9",
+          "#5b83e3",
+          "#8ea9ec",
+          "#c2d2f6",
+          "#e6edfc"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Tinta",
+        "canonical": "#141413",
+        "tonalRamp": [
+          "#141413",
+          "#1e1e1c",
+          "#2d2d2a",
+          "#5a5953",
+          "#8a8981",
+          "#b9b7ae",
+          "#e2dfd5",
+          "#efede6"
+        ]
+      },
+      "paper": {
+        "role": "neutral",
+        "displayName": "Papel",
+        "canonical": "#f8f7f3",
+        "tonalRamp": [
+          "#5a5953",
+          "#8a8981",
+          "#b9b7ae",
+          "#e2dfd5",
+          "#efede6",
+          "#f8f7f3",
+          "#fcfbf9",
+          "#ffffff"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "hero": {
+        "displayName": "Hero",
+        "purpose": "Titular de la portada del inicio."
+      },
+      "display": {
+        "displayName": "Display",
+        "purpose": "Título de cada pantalla."
+      },
+      "numeral": {
+        "displayName": "Numeral",
+        "purpose": "El 404."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Secciones y estados vacíos."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Nombre del producto en la ficha."
+      },
+      "wordmark": {
+        "displayName": "Wordmark",
+        "purpose": "Logotipo ProductHub en el menú."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Descripciones y texto de apoyo."
+      },
+      "control": {
+        "displayName": "Control",
+        "purpose": "Texto dentro de la búsqueda."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Botones, menú, etiquetas de campo."
+      },
+      "data": {
+        "displayName": "Data",
+        "purpose": "Resource ID con cifras tabulares."
+      }
+    },
+    "shadows": [],
+    "motion": [
+      {
+        "name": "ease-out-strong",
+        "value": "cubic-bezier(0.23, 1, 0.32, 1)",
+        "purpose": "Ficha que se endereza, entrada del estante, presión de botón."
+      },
+      {
+        "name": "press",
+        "value": "transform 140ms",
+        "purpose": "scale(0.97) al presionar cualquier control."
+      },
+      {
+        "name": "pop-card-lift",
+        "value": "transform 320ms",
+        "purpose": "La ficha pasa de su inclinación a recta y sube 4px."
+      },
+      {
+        "name": "shelf-in",
+        "value": "320ms, stagger 40ms, 10px",
+        "purpose": "Entrada de fichas al cambiar vista o búsqueda."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "sm",
+        "value": "640px"
+      },
+      {
+        "name": "lg",
+        "value": "1024px"
+      }
+    ],
+    "narrative": {
+      "northStar": "La calle de electrónica, de noche y en calma",
+      "overview": "ProductHub toma la gramática de una calle de tiendas de electrónica en Akihabara: letreros apilados para navegar y fichas POP que cuelgan de un gancho. Esta versión baja el volumen: el papel y la tinta hacen casi todo el trabajo, y los colores de letrero aparecen como acentos precisos, no como campos llenos.",
+      "keyCharacteristics": [
+        "Un solo campo de color sólido en todo el producto: la portada amarilla del inicio.",
+        "Fichas blancas con un filo impreso de color de 6px, agujero de gancho y línea de corte punteada.",
+        "Menú oscuro donde solo el letrero activo se enciende; los demás llevan el color únicamente en el icono.",
+        "Líneas de 1px en tono papel en lugar de bordes negros; una acción roja por pantalla."
+      ],
+      "rules": [
+        {
+          "section": "Colors",
+          "name": "The One Field Rule",
+          "body": "Solo la portada del inicio es un campo de color sólido. Encabezados de página, fichas y estados viven sobre papel."
+        },
+        {
+          "section": "Colors",
+          "name": "The One Red Rule",
+          "body": "Cada pantalla tiene como mucho una acción en rojo señal."
+        },
+        {
+          "section": "Typography",
+          "name": "The Display-Is-For-Names Rule",
+          "body": "Dela Gothic One nunca aparece en botones, etiquetas, inputs ni datos."
+        },
+        {
+          "section": "Layout",
+          "name": "The Whole-Card Rule",
+          "body": "La vitrina se reordena por fichas completas; Vitrina/Lista cambia todo el estante a la vez."
+        },
+        {
+          "section": "Elevation & Depth",
+          "name": "The No-Shadow Rule",
+          "body": "Nada en reposo lleva sombra; la opción activa del selector se marca con tarjeta sobre papel 2."
+        }
+      ],
+      "dos": [
+        "Do dar a cada ruta nueva su letrero con su propio color, encendido solo cuando está activa.",
+        "Do mostrar solo los campos que la API tiene (nombre y Resource ID).",
+        "Do separar superficies con tono y líneas de 1px en color línea."
+      ],
+      "donts": [
+        "Don't volver a poner franjas de color sólido en los encabezados de página.",
+        "Don't usar bordes negros gruesos, sombras en reposo ni un segundo botón rojo.",
+        "Don't añadir precios, categorías o existencias inventadas, ni etiquetas en mayúsculas sobre los títulos."
+      ]
+    }
+  }
+}

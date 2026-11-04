@@ -1,0 +1,37 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0}
+body{width:1440px;height:900px;overflow:hidden;font-family:"Zen Kaku Gothic New",sans-serif;background:#fff;color:#111;display:grid;grid-template-columns:240px 1fr}
+.rail{background:#111;padding:20px 16px;display:flex;flex-direction:column;gap:10px}
+.logo{font-family:"Dela Gothic One";color:#FFE01B;font-size:30px;line-height:.9;margin-bottom:18px}
+.sign{display:flex;justify-content:space-between;align-items:center;padding:16px 14px;font-weight:700;font-size:16px;border-radius:4px}
+.s1{background:#FFE01B}.s2{background:#E8262B;color:#fff}.s3{background:#1E6BFF;color:#fff}.s4{background:#fff}
+.sign b{font-family:"Dela Gothic One";font-size:22px}
+main{display:flex;flex-direction:column}
+.top{background:#FFE01B;padding:28px 40px 22px;border-bottom:4px solid #111;display:flex;justify-content:space-between;align-items:end}
+h1{font-family:"Dela Gothic One";font-size:84px;line-height:.9;letter-spacing:-.02em}
+.top small{font-weight:700;font-size:14px}
+.btn{background:#E8262B;color:#fff;font-weight:700;padding:14px 22px;border-radius:999px;font-size:15px}
+.bar{display:flex;gap:12px;align-items:center;padding:18px 40px;border-bottom:1px solid #ddd}
+.search{flex:1;border:2px solid #111;border-radius:999px;padding:12px 18px;color:#777;font-size:14px}
+.seg{display:flex;border:2px solid #111;border-radius:999px;overflow:hidden;font-weight:700;font-size:13px}
+.seg span{padding:10px 16px}.seg .on{background:#111;color:#FFE01B}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;padding:28px 40px}
+.pop{border:3px solid #111;background:#fff;transform:rotate(var(--r));box-shadow:0 0 0 0}
+.pop .hd{padding:8px 12px;font-weight:700;font-size:12px;display:flex;justify-content:space-between}
+.pop .num{font-family:"Dela Gothic One";font-size:96px;line-height:1;padding:8px 12px 0}
+.pop .nm{font-family:"Dela Gothic One";font-size:22px;padding:4px 12px 12px;line-height:1.05}
+.pop .id{border-top:2px dashed #111;padding:10px 12px;font-size:12px;font-weight:500}
+.y{background:#FFE01B}.r{background:#E8262B;color:#fff}.b{background:#1E6BFF;color:#fff}.k{background:#111;color:#fff}
+</style></head><body>
+<aside class="rail"><div class="logo">PRODUCT<br>HUB</div>
+<div class="sign s1">Inicio <b>01</b></div><div class="sign s2">Productos <b>02</b></div><div class="sign s3">Nuevo <b>03</b></div></aside>
+<main><div class="top"><div><small>Catálogo · 4 productos</small><h1>Productos</h1></div><span class="btn">+ Nuevo producto</span></div>
+<div class="bar"><div class="search">Buscar por nombre o ID</div><div class="seg"><span class="on">Vitrina</span><span>Lista</span></div></div>
+<div class="grid">
+<div class="pop" style="--r:-1.5deg"><div class="hd y"><span>AUDIO</span><span>Nº</span></div><div class="num">001</div><div class="nm">Wireless Headphones</div><div class="id">product-001</div></div>
+<div class="pop" style="--r:1deg"><div class="hd r"><span>WEARABLE</span><span>Nº</span></div><div class="num">002</div><div class="nm">Smart Watch</div><div class="id">product-002</div></div>
+<div class="pop" style="--r:-.5deg"><div class="hd b"><span>PERIFÉRICO</span><span>Nº</span></div><div class="num">003</div><div class="nm">Mechanical Keyboard</div><div class="id">product-003</div></div>
+<div class="pop" style="--r:1.5deg"><div class="hd k"><span>PANTALLA</span><span>Nº</span></div><div class="num">004</div><div class="nm">4K Monitor</div><div class="id">product-004</div></div>
+</div></main></body></html>

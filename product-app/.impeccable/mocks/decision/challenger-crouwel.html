@@ -1,0 +1,32 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0}
+body{width:1440px;height:900px;overflow:hidden;font-family:Archivo,sans-serif;color:#0B0B0B;background:#fff;
+background-image:linear-gradient(#D9E3FF 1px,transparent 1px),linear-gradient(90deg,#D9E3FF 1px,transparent 1px);background-size:40px 40px}
+header{height:80px;background:#2B59FF;color:#fff;display:flex;align-items:center;justify-content:space-between;padding:0 40px}
+header b{font-weight:800;font-size:22px;letter-spacing:.08em}
+header nav{display:flex;gap:32px;font-weight:600}
+main{padding:40px}
+.big{display:grid;grid-template-columns:repeat(9,40px);grid-auto-rows:40px}
+.big i{background:#0B0B0B}
+.hrow{display:flex;justify-content:space-between;align-items:end}
+.btn{background:#0B0B0B;color:#fff;padding:14px 22px;font-weight:600}
+table{margin-top:40px;width:100%;border-collapse:collapse;background:#fff}
+td,th{padding:20px;border-bottom:1px solid #0B0B0B;text-align:left;font-size:16px}
+th{font-size:12px;letter-spacing:.18em}
+.init{width:80px;height:80px;display:grid;grid-template-columns:repeat(4,1fr);gap:2px}
+.init i{background:#2B59FF}.init i.o{background:transparent}
+</style></head><body>
+<header><b>PRODUCTHUB</b><nav><span>Inicio</span><span>Productos</span><span>Nuevo</span></nav></header>
+<main><div class="hrow"><div class="big">
+<i></i><i></i><i></i><i style="background:none"></i><i></i><i></i><i></i><i style="background:none"></i><i></i>
+<i></i><i style="background:none"></i><i></i><i style="background:none"></i><i></i><i style="background:none"></i><i></i><i style="background:none"></i><i></i>
+<i></i><i></i><i></i><i style="background:none"></i><i></i><i></i><i style="background:none"></i><i style="background:none"></i><i></i>
+<i></i><i style="background:none"></i><i style="background:none"></i><i style="background:none"></i><i></i><i style="background:none"></i><i></i><i style="background:none"></i><i></i>
+</div><span class="btn">+ Nuevo producto</span></div>
+<table><tr><th>PRODUCTO</th><th>NOMBRE</th><th>RESOURCE ID</th></tr>
+<tr><td><div class="init"><i></i><i></i><i></i><i></i><i></i><i class="o"></i><i class="o"></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="o"></i><i class="o"></i><i></i></div></td><td>Wireless Headphones</td><td>product-001</td></tr>
+<tr><td><div class="init"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="o"></i><i class="o"></i><i class="o"></i><i></i><i></i><i></i><i></i><i></i></div></td><td>Smart Watch</td><td>product-002</td></tr>
+<tr><td><div class="init"><i></i><i class="o"></i><i></i><i class="o"></i><i></i><i></i><i class="o"></i><i class="o"></i><i></i><i class="o"></i><i></i><i class="o"></i><i></i><i class="o"></i><i class="o"></i><i></i></div></td><td>Mechanical Keyboard</td><td>product-003</td></tr>
+</table></main></body></html>

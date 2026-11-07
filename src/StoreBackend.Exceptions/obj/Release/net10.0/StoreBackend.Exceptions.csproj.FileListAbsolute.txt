@@ -20,3 +20,4 @@ C:\Users\Gerald\Desktop\Universidad_ Bach. Informatica Empresarial\Desarrollo 4\
 C:\Users\Gerald\Desktop\Universidad_ Bach. Informatica Empresarial\Desarrollo 4\StoreBackend\src\StoreBackend.Exceptions\obj\Release\net10.0\refint\StoreBackend.Exceptions.dll
 C:\Users\Gerald\Desktop\Universidad_ Bach. Informatica Empresarial\Desarrollo 4\StoreBackend\src\StoreBackend.Exceptions\obj\Release\net10.0\StoreBackend.Exceptions.pdb
 C:\Users\Gerald\Desktop\Universidad_ Bach. Informatica Empresarial\Desarrollo 4\StoreBackend\src\StoreBackend.Exceptions\obj\Release\net10.0\ref\StoreBackend.Exceptions.dll
+C:\Users\Gerald\Desktop\Universidad_ Bach. Informatica Empresarial\Desarrollo 4\StoreBackend\src\StoreBackend.Exceptions\obj\Release\net10.0\StoreBackend.Exceptions.sourcelink.json

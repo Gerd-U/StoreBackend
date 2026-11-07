@@ -32,3 +32,4 @@ C:\Users\Gerald\Desktop\Universidad_ Bach. Informatica Empresarial\Desarrollo 4\
 C:\Users\Gerald\Desktop\Universidad_ Bach. Informatica Empresarial\Desarrollo 4\StoreBackend\src\StoreBackend.Infrastructure\obj\Release\net10.0\StoreBackend.Infrastructure.pdb
 C:\Users\Gerald\Desktop\Universidad_ Bach. Informatica Empresarial\Desarrollo 4\StoreBackend\src\StoreBackend.Infrastructure\obj\Release\net10.0\StoreBackend.Infrastructure.genruntimeconfig.cache
 C:\Users\Gerald\Desktop\Universidad_ Bach. Informatica Empresarial\Desarrollo 4\StoreBackend\src\StoreBackend.Infrastructure\obj\Release\net10.0\ref\StoreBackend.Infrastructure.dll
+C:\Users\Gerald\Desktop\Universidad_ Bach. Informatica Empresarial\Desarrollo 4\StoreBackend\src\StoreBackend.Infrastructure\obj\Release\net10.0\StoreBackend.Infrastructure.sourcelink.json

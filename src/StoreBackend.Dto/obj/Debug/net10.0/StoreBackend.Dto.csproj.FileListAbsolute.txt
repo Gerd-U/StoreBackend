@@ -23,3 +23,4 @@ C:\Users\Gerald\Desktop\Universidad_ Bach. Informatica Empresarial\Desarrollo 4\
 C:\Users\Gerald\Desktop\Universidad_ Bach. Informatica Empresarial\Desarrollo 4\StoreBackend\src\StoreBackend.Dto\obj\Debug\net10.0\refint\StoreBackend.Dto.dll
 C:\Users\Gerald\Desktop\Universidad_ Bach. Informatica Empresarial\Desarrollo 4\StoreBackend\src\StoreBackend.Dto\obj\Debug\net10.0\StoreBackend.Dto.pdb
 C:\Users\Gerald\Desktop\Universidad_ Bach. Informatica Empresarial\Desarrollo 4\StoreBackend\src\StoreBackend.Dto\obj\Debug\net10.0\ref\StoreBackend.Dto.dll
+C:\Users\Gerald\Desktop\Universidad_ Bach. Informatica Empresarial\Desarrollo 4\StoreBackend\src\StoreBackend.Dto\obj\Debug\net10.0\StoreBackend.Dto.sourcelink.json

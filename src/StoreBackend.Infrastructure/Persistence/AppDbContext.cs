@@ -19,7 +19,7 @@ public class AppDbContext : DbContext
         modelBuilder.Entity<User>(user =>
         {
             user.HasIndex(u => u.UserResourceId).IsUnique();
-            user.HasIndex(u => u.Email).IsUnique();
+            user.HasIndex(u => u.Username).IsUnique();
         });
     }
 }

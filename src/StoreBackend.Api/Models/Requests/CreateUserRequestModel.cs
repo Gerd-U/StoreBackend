@@ -4,16 +4,16 @@ namespace StoreBackend.Api.Models.Requests;
 
 public class CreateUserRequestModel
 {
-    [Required]
+    // Opcional: si no se envía, el backend genera uno.
     public Guid? UserResourceId { get; set; }
 
     [Required]
-    [MinLength(2)]
-    [MaxLength(100)]
-    public string? Name { get; set; }
+    [MinLength(3)]
+    [MaxLength(50)]
+    public string? Username { get; set; }
 
     [Required]
-    [EmailAddress]
-    [MaxLength(150)]
-    public string? Email { get; set; }
+    [MinLength(8)]
+    [MaxLength(100)]
+    public string? Password { get; set; }
 }

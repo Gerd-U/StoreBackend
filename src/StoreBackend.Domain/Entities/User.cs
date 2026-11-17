@@ -13,11 +13,11 @@ public class User
     [Required]
     public Guid UserResourceId { get; set; }
 
-    [Column("Name")]
-    [StringLength(100)]
-    public string Name { get; set; } = string.Empty;
+    [Column("Username")]
+    [StringLength(50)]
+    public string Username { get; set; } = string.Empty;
 
-    [Column("Email")]
-    [StringLength(150)]
-    public string Email { get; set; } = string.Empty;
+    [Column("PasswordHash")]
+    [StringLength(255)]
+    public string PasswordHash { get; set; } = string.Empty;
 }

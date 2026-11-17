@@ -32,19 +32,23 @@ public class UserService : IUserService
 
     public async Task<User> AddAsync(UserDto user)
     {
-        var name = user.Name?.Trim() ?? string.Empty;
-        var email = user.Email?.Trim().ToLowerInvariant() ?? string.Empty;
+        var username = user.Username?.Trim().ToLowerInvariant() ?? string.Empty;
 
-        if (await _userRepository.ExistsAsync(user.UserResourceId, email))
+        if (string.IsNullOrWhiteSpace(user.Password))
         {
-            throw new ResourceConflictException("A user with this id or email already exists");
+            throw new ArgumentException("Password is required.", nameof(user));
+        }
+
+        if (await _userRepository.ExistsAsync(user.UserResourceId, username))
+        {
+            throw new ResourceConflictException("A user with this id or username already exists");
         }
 
         var userEntity = new User
         {
             UserResourceId = user.UserResourceId,
-            Name = name,
-            Email = email
+            Username = username,
+            PasswordHash = BCrypt.Net.BCrypt.HashPassword(user.Password)
         };
 
         return await _userRepository.AddAsync(userEntity);

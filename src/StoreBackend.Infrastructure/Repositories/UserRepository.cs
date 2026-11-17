@@ -15,7 +15,7 @@ public class UserRepository : IUserRepository
 
     public async Task<List<User>> GetAllAsync()
     {
-        return await _context.Users.OrderBy(u => u.Name).ToListAsync();
+        return await _context.Users.OrderBy(u => u.Username).ToListAsync();
     }
 
     public async Task<User?> GetByIdAsync(Guid userId)
@@ -23,9 +23,9 @@ public class UserRepository : IUserRepository
         return await _context.Users.FirstOrDefaultAsync(u => u.UserResourceId == userId);
     }
 
-    public async Task<bool> ExistsAsync(Guid userId, string email)
+    public async Task<bool> ExistsAsync(Guid userId, string username)
     {
-        return await _context.Users.AnyAsync(u => u.UserResourceId == userId || u.Email == email);
+        return await _context.Users.AnyAsync(u => u.UserResourceId == userId || u.Username == username);
     }
 
     public async Task<User> AddAsync(User user)

@@ -10,10 +10,9 @@ public class UserMapper
     {
         return new UserDto
         {
-            UserResourceId = model.UserResourceId
-                ?? throw new ArgumentException("UserResourceId is required.", nameof(model)),
-            Name = model.Name,
-            Email = model.Email
+            UserResourceId = model.UserResourceId ?? Guid.NewGuid(),
+            Username = model.Username,
+            Password = model.Password
         };
     }
 
@@ -27,8 +26,7 @@ public class UserMapper
         return new UserResponseModel
         {
             UserResourceId = user.UserResourceId,
-            Name = user.Name,
-            Email = user.Email
+            Username = user.Username
         };
     }
 }

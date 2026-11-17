@@ -1,5 +1,6 @@
 {
     "api": {
-        "URL": "https://practicadesarrollowebapp-cbhmehfcbyguc3dw.westus-01.azurewebsites.net"
+        "URL": "http://localhost:5119",
+        "URL_AZURE": "https://practicadesarrollowebapp-cbhmehfcbyguc3dw.westus-01.azurewebsites.net"
     }
 }

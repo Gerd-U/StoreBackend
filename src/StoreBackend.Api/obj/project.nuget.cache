@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "Qc70M3TLao4=",
+  "dgSpecHash": "I0Slhm9ZNyM=",
   "success": true,
   "projectFilePath": "C:\\Users\\Gerald\\Desktop\\Universidad_ Bach. Informatica Empresarial\\Desarrollo 4\\StoreBackend\\src\\StoreBackend.Api\\StoreBackend.Api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Gerald\\.nuget\\packages\\azure.core\\1.47.1\\azure.core.1.47.1.nupkg.sha512",
     "C:\\Users\\Gerald\\.nuget\\packages\\azure.identity\\1.14.2\\azure.identity.1.14.2.nupkg.sha512",
+    "C:\\Users\\Gerald\\.nuget\\packages\\bcrypt.net-next\\4.2.0\\bcrypt.net-next.4.2.0.nupkg.sha512",
     "C:\\Users\\Gerald\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\Gerald\\.nuget\\packages\\microsoft.aspnetcore.openapi\\10.0.11\\microsoft.aspnetcore.openapi.10.0.11.nupkg.sha512",
     "C:\\Users\\Gerald\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\8.0.0\\microsoft.bcl.asyncinterfaces.8.0.0.nupkg.sha512",

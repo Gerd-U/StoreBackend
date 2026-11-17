@@ -13,7 +13,9 @@ export function UsersPage() {
 
   const needle = query.trim().toLowerCase()
   const visible = needle
-    ? users.filter((user) => user.username.toLowerCase().includes(needle))
+    ? users.filter((user) =>
+        [user.name, user.username, user.email].some((value) => value.toLowerCase().includes(needle)),
+      )
     : users
 
   const setQuery = (value: string) => {
@@ -45,12 +47,12 @@ export function UsersPage() {
         {status === 'ready' && users.length > 0 && (
           <label className="mb-8 flex h-11 w-full items-center gap-2.5 rounded-full border border-line bg-card px-4 text-ink-soft transition-[border-color,box-shadow] duration-200 hover:border-ink/30 focus-within:border-wire focus-within:text-ink focus-within:ring-4 focus-within:ring-wire/10 sm:max-w-md">
             <Search size={17} strokeWidth={2.2} className="shrink-0" aria-hidden="true" />
-            <span className="sr-only">Buscar usuarios por nombre de usuario</span>
+            <span className="sr-only">Buscar usuarios por nombre, usuario o correo</span>
             <input
               type="search"
               value={query}
               onChange={(event) => setQuery(event.target.value)}
-              placeholder="Buscar por usuario"
+              placeholder="Buscar por nombre, usuario o correo"
               className="min-w-0 flex-1 bg-transparent text-[0.9375rem] text-ink outline-none placeholder:text-ink-soft/80 [&::-webkit-search-cancel-button]:hidden"
             />
             {query && (
@@ -99,7 +101,7 @@ export function UsersPage() {
         ) : users.length === 0 ? (
           <Notice
             title="Todavía no hay usuarios"
-            body="Registra el primero con su usuario y contraseña; aparecerá aquí."
+            body="Registra el primero con su nombre, usuario, correo y contraseña; aparecerá aquí."
             action={
               <Link to="/users/new" className={primaryButton}>
                 <UserPlus size={17} strokeWidth={2.4} aria-hidden="true" />

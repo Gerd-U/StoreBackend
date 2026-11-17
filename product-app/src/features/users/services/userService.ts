@@ -3,10 +3,13 @@ import { config } from '../../../config'
 
 const API_URL = `${config.api.URL}/api/users`
 
+export const USER_NAME_MIN_LENGTH = 2
+export const USER_NAME_MAX_LENGTH = 50
+export const USER_EMAIL_MAX_LENGTH = 100
 export const USERNAME_MIN_LENGTH = 3
 export const USERNAME_MAX_LENGTH = 50
 export const PASSWORD_MIN_LENGTH = 8
-export const PASSWORD_MAX_LENGTH = 100
+export const PASSWORD_MAX_LENGTH = 72
 
 const isUser = (value: unknown): value is User => {
   if (typeof value !== 'object' || value === null) return false
@@ -14,8 +17,12 @@ const isUser = (value: unknown): value is User => {
   return (
     'userResourceId' in value &&
     typeof value.userResourceId === 'string' &&
+    'name' in value &&
+    typeof value.name === 'string' &&
     'username' in value &&
-    typeof value.username === 'string'
+    typeof value.username === 'string' &&
+    'email' in value &&
+    typeof value.email === 'string'
   )
 }
 
@@ -60,6 +67,25 @@ export const getUserById = async (userResourceId: string): Promise<User> => {
   }
 }
 
+const BAD_REQUEST_MESSAGES: Record<string, string> = {
+  'Username is already taken': 'Ya existe un usuario con ese nombre de usuario.',
+  'Email is already taken': 'Ya existe un usuario con ese correo.',
+  'Password is too long': 'La contraseña es demasiado larga.',
+}
+
+// El backend devuelve { message } para duplicados y un ProblemDetails para validaciones.
+const badRequestMessage = async (response: Response): Promise<string> => {
+  try {
+    const body: unknown = await response.json()
+    if (typeof body === 'object' && body !== null && 'message' in body && typeof body.message === 'string') {
+      return BAD_REQUEST_MESSAGES[body.message] ?? body.message
+    }
+  } catch {
+    // respuesta sin JSON
+  }
+  return 'Revisa los datos: el servidor los rechazó.'
+}
+
 export const createUser = async (user: NewUser): Promise<User> => {
   try {
     const response = await fetch(API_URL, {
@@ -70,11 +96,8 @@ export const createUser = async (user: NewUser): Promise<User> => {
       body: JSON.stringify(user),
     })
 
-    if (response.status === 409) {
-      throw new Error('Ya existe un usuario con ese nombre de usuario.')
-    }
     if (response.status === 400) {
-      throw new Error('Revisa el usuario y la contraseña: el servidor los rechazó.')
+      throw new Error(await badRequestMessage(response))
     }
     if (!response.ok) {
       throw new Error(`Error al crear el usuario: ${response.status}`)

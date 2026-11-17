@@ -4,9 +4,14 @@ namespace StoreBackend.Infrastructure.Repositories;
 
 public interface IUserRepository
 {
+    // Métodos del ejemplo de la profe
+    Task<User> CreateAsync(User user);
+    Task<bool> HasUserByUsernameAsync(string username);
+    Task<bool> HasUserByEmailAsync(string email);
+    Task<User?> GetByUsername(string username);
+
+    // Métodos extra que usa el resto de la API (listar, detalle, eliminar)
     Task<List<User>> GetAllAsync();
     Task<User?> GetByIdAsync(Guid userId);
-    Task<bool> ExistsAsync(Guid userId, string username);
-    Task<User> AddAsync(User user);
     Task DeleteAsync(User user);
 }

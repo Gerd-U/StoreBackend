@@ -15,7 +15,9 @@ public static class UserMapper
         return new UserDto
         {
             UserResourceId = user.UserResourceId,
-            Username = user.Username
+            Name = user.Name,
+            Username = user.Username,
+            Email = user.Email
         };
     }
 }

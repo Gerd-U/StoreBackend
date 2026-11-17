@@ -46,13 +46,13 @@ public class UserController : ControllerBase
         try
         {
             var dto = ApiUserMapper.ToDto(user);
-            var addedUser = await _userFacade.AddAsync(dto);
+            var addedUser = await _userFacade.CreateAsync(dto);
             var model = ApiUserMapper.ToResponseModel(addedUser);
             return CreatedAtAction(nameof(GetUser), new { id = model.UserResourceId }, model);
         }
-        catch (ResourceConflictException exception)
+        catch (BadRequestResponseException exception)
         {
-            return Conflict(new { message = exception.Message });
+            return BadRequest(new { message = exception.Message });
         }
     }
 

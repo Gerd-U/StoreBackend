@@ -13,6 +13,32 @@ public class UserRepository : IUserRepository
         _context = context;
     }
 
+    public Task<User> CreateAsync(User user)
+    {
+        _context.Users.Add(user);
+        return Task.FromResult(user);
+    }
+
+    // Username y Email se guardan en minúsculas (ver UserService),
+    // así que se buscan normalizados de la misma forma.
+    public async Task<bool> HasUserByUsernameAsync(string username)
+    {
+        var normalized = username.Trim().ToLowerInvariant();
+        return await _context.Users.AnyAsync(u => u.Username == normalized);
+    }
+
+    public async Task<bool> HasUserByEmailAsync(string email)
+    {
+        var normalized = email.Trim().ToLowerInvariant();
+        return await _context.Users.AnyAsync(u => u.Email == normalized);
+    }
+
+    public Task<User?> GetByUsername(string username)
+    {
+        var normalized = username.Trim().ToLowerInvariant();
+        return _context.Users.FirstOrDefaultAsync(u => u.Username == normalized);
+    }
+
     public async Task<List<User>> GetAllAsync()
     {
         return await _context.Users.OrderBy(u => u.Username).ToListAsync();
@@ -21,17 +47,6 @@ public class UserRepository : IUserRepository
     public async Task<User?> GetByIdAsync(Guid userId)
     {
         return await _context.Users.FirstOrDefaultAsync(u => u.UserResourceId == userId);
-    }
-
-    public async Task<bool> ExistsAsync(Guid userId, string username)
-    {
-        return await _context.Users.AnyAsync(u => u.UserResourceId == userId || u.Username == username);
-    }
-
-    public async Task<User> AddAsync(User user)
-    {
-        await _context.Users.AddAsync(user);
-        return user;
     }
 
     public Task DeleteAsync(User user)

@@ -28,9 +28,9 @@ public class UserFacade : IUserFacade
         return UserMapper.ToDto(entity);
     }
 
-    public async Task<UserDto> AddAsync(UserDto user)
+    public async Task<UserDto> CreateAsync(CreateUserDto user)
     {
-        var entity = await _userService.AddAsync(user);
+        var entity = await _userService.CreateAsync(user);
         await _context.SaveChangesAsync();
         return UserMapper.ToDto(entity);
     }

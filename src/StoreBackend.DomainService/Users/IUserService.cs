@@ -5,8 +5,10 @@ namespace StoreBackend.DomainService.Users;
 
 public interface IUserService
 {
+    Task<User> CreateAsync(CreateUserDto user);
+    // Task<User?> GetByUserAndPassword(AuthorizationRequestDto request);
+
     Task<List<User>> GetAllAsync();
     Task<User> GetByIdAsync(Guid userId);
-    Task<User> AddAsync(UserDto user);
     Task DeleteAsync(Guid userId);
 }

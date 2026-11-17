@@ -1,0 +1,17 @@
+# Compilación de .NET
+bin/
+obj/
+publish/
+*.user
+*.suo
+
+# Visual Studio / Rider
+.vs/
+.idea/
+
+# Node
+node_modules/
+
+# Sistema operativo
+.DS_Store
+Thumbs.db

@@ -1,5 +1,10 @@
 export interface User {
   userResourceId: string
-  name: string
-  email: string
+  username: string
+}
+
+export interface NewUser {
+  userResourceId: string
+  username: string
+  password: string
 }

@@ -16,7 +16,7 @@ export function UsersTable({ users, onDeleted }: UsersTableProps) {
   const [deleteError, setDeleteError] = useState<string | null>(null)
 
   const handleDelete = async (user: User) => {
-    const confirmed = window.confirm(`¿Eliminar a ${user.name}? Esta acción no se puede deshacer.`)
+    const confirmed = window.confirm(`¿Eliminar a ${user.username}? Esta acción no se puede deshacer.`)
     if (!confirmed) return
 
     setDeletingId(user.userResourceId)
@@ -46,9 +46,6 @@ export function UsersTable({ users, onDeleted }: UsersTableProps) {
               <th scope="col" className="px-5 py-3 font-bold">
                 Usuario
               </th>
-              <th scope="col" className="hidden px-5 py-3 font-bold sm:table-cell">
-                Correo
-              </th>
               <th scope="col" className="w-14 px-3 py-3 sm:w-20 sm:px-5">
                 <span className="sr-only">Acciones</span>
               </th>
@@ -67,11 +64,8 @@ export function UsersTable({ users, onDeleted }: UsersTableProps) {
                       to={`/users/${user.userResourceId}`}
                       className="inline-flex min-w-0 items-center gap-3 font-bold decoration-signal decoration-2 underline-offset-4 hover:underline"
                     >
-                      <UserAvatar name={user.name} seed={user.userResourceId} />
-                      <span className="min-w-0">
-                        <span className="block truncate">{user.name}</span>
-                        <span className="block truncate text-xs font-normal text-ink-soft sm:hidden">{user.email}</span>
-                      </span>
+                      <UserAvatar name={user.username} seed={user.userResourceId} />
+                      <span className="min-w-0 truncate">{user.username}</span>
                       <ArrowUpRight
                         size={15}
                         strokeWidth={2.4}
@@ -80,19 +74,14 @@ export function UsersTable({ users, onDeleted }: UsersTableProps) {
                       />
                     </Link>
                   </td>
-                  <td className="hidden px-5 py-3 text-sm text-ink-soft sm:table-cell">
-                    <a href={`mailto:${user.email}`} className="hover:text-ink hover:underline hover:underline-offset-4">
-                      {user.email}
-                    </a>
-                  </td>
                   <td className="px-3 py-2 sm:px-4">
                     <span className="flex justify-end">
                       <button
                         type="button"
                         onClick={() => void handleDelete(user)}
                         disabled={deletingId !== null}
-                        title={isDeleting ? `Eliminando a ${user.name}…` : `Eliminar a ${user.name}`}
-                        aria-label={`Eliminar a ${user.name}`}
+                        title={isDeleting ? `Eliminando a ${user.username}…` : `Eliminar a ${user.username}`}
+                        aria-label={`Eliminar a ${user.username}`}
                         className={`${iconButton} hover:bg-signal/10 hover:text-signal`}
                       >
                         <Trash2 size={16} strokeWidth={2.1} aria-hidden="true" />

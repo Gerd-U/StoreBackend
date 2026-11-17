@@ -52,27 +52,27 @@ namespace StoreBackend.Infrastructure.Persistence.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("UserId"));
 
-                    b.Property<string>("Email")
+                    b.Property<string>("Password")
                         .IsRequired()
-                        .HasMaxLength(150)
-                        .HasColumnType("nvarchar(150)")
-                        .HasColumnName("Email");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)")
-                        .HasColumnName("Name");
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)")
+                        .HasColumnName("Password");
 
                     b.Property<Guid>("UserResourceId")
                         .HasColumnType("uniqueidentifier");
 
+                    b.Property<string>("Username")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)")
+                        .HasColumnName("Username");
+
                     b.HasKey("UserId");
 
-                    b.HasIndex("Email")
+                    b.HasIndex("UserResourceId")
                         .IsUnique();
 
-                    b.HasIndex("UserResourceId")
+                    b.HasIndex("Username")
                         .IsUnique();
 
                     b.ToTable("User");

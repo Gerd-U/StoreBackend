@@ -17,7 +17,7 @@ public class User
     [StringLength(50)]
     public string Username { get; set; } = string.Empty;
 
-    [Column("PasswordHash")]
+    [Column("Password")]
     [StringLength(255)]
-    public string PasswordHash { get; set; } = string.Empty;
+    public string Password { get; set; } = string.Empty;
 }

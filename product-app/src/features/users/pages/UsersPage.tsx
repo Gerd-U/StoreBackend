@@ -13,9 +13,7 @@ export function UsersPage() {
 
   const needle = query.trim().toLowerCase()
   const visible = needle
-    ? users.filter(
-        (user) => user.name.toLowerCase().includes(needle) || user.email.toLowerCase().includes(needle),
-      )
+    ? users.filter((user) => user.username.toLowerCase().includes(needle))
     : users
 
   const setQuery = (value: string) => {
@@ -47,12 +45,12 @@ export function UsersPage() {
         {status === 'ready' && users.length > 0 && (
           <label className="mb-8 flex h-11 w-full items-center gap-2.5 rounded-full border border-line bg-card px-4 text-ink-soft transition-[border-color,box-shadow] duration-200 hover:border-ink/30 focus-within:border-wire focus-within:text-ink focus-within:ring-4 focus-within:ring-wire/10 sm:max-w-md">
             <Search size={17} strokeWidth={2.2} className="shrink-0" aria-hidden="true" />
-            <span className="sr-only">Buscar usuarios por nombre o correo</span>
+            <span className="sr-only">Buscar usuarios por nombre de usuario</span>
             <input
               type="search"
               value={query}
               onChange={(event) => setQuery(event.target.value)}
-              placeholder="Buscar por nombre o correo"
+              placeholder="Buscar por usuario"
               className="min-w-0 flex-1 bg-transparent text-[0.9375rem] text-ink outline-none placeholder:text-ink-soft/80 [&::-webkit-search-cancel-button]:hidden"
             />
             {query && (
@@ -101,7 +99,7 @@ export function UsersPage() {
         ) : users.length === 0 ? (
           <Notice
             title="Todavía no hay usuarios"
-            body="Registra el primero con su nombre y correo; aparecerá aquí."
+            body="Registra el primero con su usuario y contraseña; aparecerá aquí."
             action={
               <Link to="/users/new" className={primaryButton}>
                 <UserPlus size={17} strokeWidth={2.4} aria-hidden="true" />
@@ -112,7 +110,7 @@ export function UsersPage() {
         ) : visible.length === 0 ? (
           <Notice
             title={`Nadie con “${query.trim()}”`}
-            body="Ningún usuario coincide con ese nombre o correo."
+            body="Ningún usuario coincide con esa búsqueda."
             action={
               <button type="button" onClick={() => setQuery('')} className={secondaryButton}>
                 Limpiar búsqueda

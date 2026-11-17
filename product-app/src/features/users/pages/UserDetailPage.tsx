@@ -48,7 +48,7 @@ export function UserDetailPage() {
 
   const handleDelete = async () => {
     if (!user) return
-    const confirmed = window.confirm(`¿Eliminar a ${user.name}? Esta acción no se puede deshacer.`)
+    const confirmed = window.confirm(`¿Eliminar a ${user.username}? Esta acción no se puede deshacer.`)
     if (!confirmed) return
 
     setIsDeleting(true)
@@ -66,7 +66,7 @@ export function UserDetailPage() {
     <section aria-labelledby="user-detail-heading">
       <TitleBand
         id="user-detail-heading"
-        title={user?.name ?? 'Detalle del usuario'}
+        title={user?.username ?? 'Detalle del usuario'}
         description="Datos del usuario tal como están registrados."
         actions={
           <Link to="/users" className={secondaryButton}>
@@ -93,7 +93,7 @@ export function UserDetailPage() {
         ) : (
           <div className="animate-shelf-in grid items-start gap-10 lg:grid-cols-[18rem_minmax(0,1fr)] lg:gap-16">
             <div className="flex items-center gap-5 lg:flex-col lg:items-start">
-              <UserAvatar name={currentState.user.name} seed={currentState.user.userResourceId} size="lg" />
+              <UserAvatar name={currentState.user.username} seed={currentState.user.userResourceId} size="lg" />
               <button
                 type="button"
                 onClick={() => void handleDelete()}
@@ -113,15 +113,8 @@ export function UserDetailPage() {
               )}
               <dl className="divide-y divide-line border-y border-line">
                 <div className="grid gap-1 py-5 sm:grid-cols-[12rem_minmax(0,1fr)] sm:gap-6">
-                  <dt className="text-sm text-ink-soft">Correo</dt>
-                  <dd>
-                    <a
-                      href={`mailto:${currentState.user.email}`}
-                      className="font-bold decoration-signal decoration-2 underline-offset-4 hover:underline"
-                    >
-                      {currentState.user.email}
-                    </a>
-                  </dd>
+                  <dt className="text-sm text-ink-soft">Usuario</dt>
+                  <dd className="font-bold">{currentState.user.username}</dd>
                 </div>
                 <div className="grid gap-1 py-5 sm:grid-cols-[12rem_minmax(0,1fr)] sm:gap-6">
                   <dt className="text-sm text-ink-soft">User Resource ID</dt>
@@ -129,7 +122,7 @@ export function UserDetailPage() {
                     <span className="min-w-0 break-all text-sm font-bold tabular-nums">
                       {currentState.user.userResourceId}
                     </span>
-                    <CopyIdButton value={currentState.user.userResourceId} productName={currentState.user.name} />
+                    <CopyIdButton value={currentState.user.userResourceId} productName={currentState.user.username} />
                   </dd>
                 </div>
               </dl>

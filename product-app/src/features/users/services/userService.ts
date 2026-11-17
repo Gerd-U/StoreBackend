@@ -1,10 +1,12 @@
-import type { User } from '../../../models/user'
+import type { NewUser, User } from '../../../models/user'
 import { config } from '../../../config'
 
 const API_URL = `${config.api.URL}/api/users`
 
-export const USER_NAME_MAX_LENGTH = 100
-export const USER_EMAIL_MAX_LENGTH = 150
+export const USERNAME_MIN_LENGTH = 3
+export const USERNAME_MAX_LENGTH = 50
+export const PASSWORD_MIN_LENGTH = 8
+export const PASSWORD_MAX_LENGTH = 100
 
 const isUser = (value: unknown): value is User => {
   if (typeof value !== 'object' || value === null) return false
@@ -12,10 +14,8 @@ const isUser = (value: unknown): value is User => {
   return (
     'userResourceId' in value &&
     typeof value.userResourceId === 'string' &&
-    'name' in value &&
-    typeof value.name === 'string' &&
-    'email' in value &&
-    typeof value.email === 'string'
+    'username' in value &&
+    typeof value.username === 'string'
   )
 }
 
@@ -60,7 +60,7 @@ export const getUserById = async (userResourceId: string): Promise<User> => {
   }
 }
 
-export const createUser = async (user: User): Promise<User> => {
+export const createUser = async (user: NewUser): Promise<User> => {
   try {
     const response = await fetch(API_URL, {
       method: 'POST',
@@ -71,10 +71,10 @@ export const createUser = async (user: User): Promise<User> => {
     })
 
     if (response.status === 409) {
-      throw new Error('Ya existe un usuario con ese correo.')
+      throw new Error('Ya existe un usuario con ese nombre de usuario.')
     }
     if (response.status === 400) {
-      throw new Error('Revisa el nombre y el correo: el servidor los rechazó.')
+      throw new Error('Revisa el usuario y la contraseña: el servidor los rechazó.')
     }
     if (!response.ok) {
       throw new Error(`Error al crear el usuario: ${response.status}`)

@@ -48,7 +48,7 @@ public class UserService : IUserService
         {
             UserResourceId = user.UserResourceId,
             Username = username,
-            PasswordHash = BCrypt.Net.BCrypt.HashPassword(user.Password)
+            Password = BCrypt.Net.BCrypt.HashPassword(user.Password)
         };
 
         return await _userRepository.AddAsync(userEntity);
